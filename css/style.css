@@ -125,13 +125,14 @@ body {
 
 .homeheader {
     height: 100vh;
-    background-image: url('../img/spiaggiaPescara.jpg');
+    background-image: url('../img/Cameron-Port-header1.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top;
     align-content: center;
     padding-top: 0px;
     text-align: center;
+    top: 100px;
 }
 
 nav {
@@ -175,9 +176,9 @@ nav {
 }
 
 h1 {
-    color: white;
+    color: black;
     font-weight: 300;
-    font-size: 7.5vw;
+    font-size: 8.5vw;
     line-height: 2em;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -185,7 +186,7 @@ h1 {
 }
 
 a.active {
-    color: #00979E;
+    color: white;
 }
 
 .title {
@@ -193,8 +194,8 @@ a.active {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     color: black;
-    font-weight: 400;
-    font-size: 0.8em;
+    font-weight: 800;
+    font-size: 0.9em;
     letter-spacing: 0.2em;
 }
 
@@ -211,11 +212,11 @@ a.active {
     font-weight: 400;
     font-size: 0.5em;
     letter-spacing: 0.2em;
-    color: whitesmoke;
+    color: black;
 }
 
 .coverinstagram:hover {
-    color: #00979E
+    color: white
 } 
 
 .coverflickr {
@@ -233,7 +234,7 @@ a.active {
 
 a:hover {
     text-decoration: none !important;
-    color: #00979e;
+    color: white;
 }
 
 .title_lines {
@@ -459,13 +460,13 @@ div.containerfooterright {
     transition: 0.75s ease-in-out;
     overflow: hidden;
 }
-.ipsfooter {
-    background-image: url('../img/Ipscover.jpg');
+.handsfooter {
+    background-image: url('../img/View_over_munich.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 0cm -6cm;
 }
-.esclusionifooter{
-    background-image: url('../img/ritagli/ChiaraCividale.jpg');
+.visionsfooter{
+    background-image: url('../img/foggy1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -519,10 +520,10 @@ div.rightfooter:hover p {
 
 .projheader {
     height: 100vh;
-    background-image: url('../img/alberiproj.jpg');
+    background-image: url('../img/Godrays.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: 0cm -20cm;
 }
 
 .projectslistcontainer {
@@ -1368,7 +1369,7 @@ strong {
 
 .aboutheader {
     height: 100vh;
-    background-image: url('../img/Giovanni_retrotesta_sfondo.jpg');
+    background-image: url('../img/About/Northern-Lights.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1378,7 +1379,7 @@ strong {
 }
 
 .abouth1 {
-    color: black;
+    color: White;
 }
 
 .bannerabout {
