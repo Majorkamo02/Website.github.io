@@ -126,7 +126,7 @@ body {
 /* For larger screens */
 .homeheader {
     height: 100vh;
-    background-image: url('../img/Cameron-Port-header1.png');
+    background-image: url('../img/Cameron-Port-header1-3.JPG');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -519,12 +519,12 @@ footer {
     }
 }
 .handsfooter {
-    background-image: url('../img/View_over_munich.jpg');
+    background-image: url('../img/View_over_munich-2.JPG');
     background-size: cover;
     background-position: bottom;
 }
 .visionsfooter{
-    background-image: url('../img/foggy1.jpg');
+    background-image: url('../img/foggy1-1.JPG');
     background-size: cover;
     background-position: center;
 }
