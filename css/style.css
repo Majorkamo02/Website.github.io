@@ -295,23 +295,6 @@ a:hover {
 }
 
 
-.portfoliocontainer {
-    position: relative;
-    column-count: 2;
-    padding: 0% 10% 0% 10%;
-}
-
-.portfolioimage {
-    width: 100%;
-    display: inline-block;
-    overflow: hidden;
-}
-
-.portfoliocontainer img {
-    width: 100%;
-}
-
-
 
 
 
@@ -503,16 +486,21 @@ footer {
         overflow-x: hidden;
         overflow-y: hidden;
     }
-
+    .containerfooter .footertext {
+        font-size: 2.5vw;
+        font-weight: 700;
+    }
     .containerfooterleft,
     .containerfooterright {
         width: 100%; /* Full width for each block */
         aspect-ratio: 4 / 1; /* Maintain a 4:3 aspect ratio */
         overflow: hidden; /* Ensure no overflow issues */
     }
-
-    .portraitsfooter,
+    .astrofooter,
     .handsfooter,
+    .portraitsfooter {
+        background-position: 0cm 0cm; /* Centers the image at the top */
+    }
     .visionsfooter {
         background-position: 50% 10%; /* Fine-tune for small screens */
         background-size: cover;
@@ -2301,3 +2289,148 @@ div.leftfooterab:hover p {
       width: 100%;
     }
   }
+
+/* Main Gallery Styles */
+.gallery {
+    column-count: 4; /* Creates 4 columns */
+    column-gap: 12px; /* Space between columns */
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+
+/* Images inside the gallery */
+.gallery-img {
+    width: 100%;
+    margin-bottom: 15px; /* Space between rows */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: block;
+    break-inside: avoid; /* Prevents items from breaking across columns */
+}
+
+/* Hover effect for images */
+.gallery-img:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .gallery {
+        column-count: 2; /* Switch to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        column-count: 1; /* Single column for very small screens */
+    }
+}
+
+.gallery-img:hover {
+    transform: scale(1.01);
+    z-index: 100; /* Higher z-index when hovered */
+}
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark translucent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure full image is visible */
+    margin: auto; /* Center image perfectly */
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1010;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1010;
+    transition: transform 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.left-arrow {
+    left: 30px;
+}
+
+.right-arrow {
+    right: 30px;
+}
+
+.nav-arrow:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Lightbox Clickable Area */
+.lightbox {
+    cursor: pointer;
+}
+
+/* Prevent unintended scaling or clipping of content */
+.lightbox img,
+.lightbox .nav-arrow,
+.lightbox .close-btn {
+    pointer-events: auto; /* Allow interaction with buttons and arrows */
+}
+
+/* For responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .close-btn {
+        font-size: 1.5rem;
+    }
+
+    .nav-arrow {
+        font-size: 2rem;
+    }
+}
