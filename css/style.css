@@ -297,8 +297,7 @@ a:hover {
 
 
 
-
-
+/* General Footer Styles */
 footer {
     margin-top: 15%;
 }
@@ -307,38 +306,38 @@ footer {
     margin-top: 0% !important;
 }
 
-.widefooterlinks{
+.widefooterlinks {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
 }
+
 .contactfooter {
     margin: 0% 2.5% 0% 0%;
 }
+
 .contactfooter p {
     text-align: right;
-    margin: 0%;
-    text-decoration: none;
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.1em;
 }
+
 .contactfooter a {
     text-decoration: none;
     color: black;
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
+
 .contactfooter a:hover {
-    text-decoration: none;
     color: #00979E;
 }
-.mbot5 {
-    margin-bottom: 2% !important;
-}
+
 .socialfooter {
     width: 100%;
     text-align: center;
@@ -351,9 +350,9 @@ footer {
 .socialcontainerfooter {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 0% 0% 0% 2.5%;
+    margin-left: 2.5%;
 }
+
 .coverinstagram2 {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -364,201 +363,131 @@ footer {
     transition: 0.25s ease-in-out;
     text-decoration: underline #00979E;
 }
-.coverflickr2 {
-    margin-bottom: 2%;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 0.8em;
-    letter-spacing: 0.1em;
-    color: black;
-    transition: 0.25s ease-in-out;
-    text-decoration: underline #00979E;
-}
-#coverinstagram2:hover {
-    text-decoration: none;
+
+.coverinstagram2:hover {
     color: #00979E;
 }
-#coverflickr2:hover {
-    text-decoration: none !important;
-    color:#00979E;
-}
-
-
 
 .continue {
     text-align: center;
 }
 
 .continue p {
-    margin: 0%;
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 0.8em;
     letter-spacing: 0.2em;
     color: #00979E;
 }
+
 .continue a {
     color: black;
-    text-decoration: underline #00979e;
+    text-decoration: underline #00979E;
 }
+
 .continue a:hover {
-    color: #00979e;
+    color: #00979E;
 }
 
-
-
-.footerbar p {
-    font-family: 'Montaserrat', sans-serif;
-    font-size: 1.5em;
-    font-weight: 100;
-}
-
-
-
+/* Footer Grid Layout */
 .containerfooter {
-    display: grid; /* Switch to grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    grid-template-rows: repeat(2, 1fr); /* Two rows */
-    gap: 1vh; /* Adjust spacing between grid items */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default: Two columns */
+    gap: 1vh;
     width: 100%;
-    height: 80vh; /* Adjust height for all footers */
-    margin-bottom: 0.25%;
-    overflow: hidden !important;
+    margin-bottom: 1%;
+    overflow: visible;
+    transition: 0.5s ease-in-out;
 }
 
-.containerfooterleft, .containerfooterright {
-    width: 100%; /* Full width within the grid */
-    height: 100%; /* Full height within the grid */
-    overflow: hidden;
+@media (max-width: 900px) {
+    .containerfooter {
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-rows: auto; /* Rows auto-adjust */
+        justify-items: center; /* Center items horizontally */
+    }
 }
-.leftfooter, .rightfooter {
+
+/* Footer Block Styles */
+.containerfooterleft,
+.containerfooterright {
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
     width: 100%;
     height: 100%;
-    transition: 0.75s ease-in-out;
-    overflow: hidden;
+    min-height: 20vh;
+    overflow: visible;
 }
-.astrofooter {
-    background-image: url('../img/Astrophotography/Trifid.jpg');
+
+.leftfooter,
+.rightfooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
+    transition: transform 0.5s ease-in-out;
 }
+
+/* Background Images */
+.astrofooter {
+    background-image: url('../img/Astrophotography/Trifid.jpg');
+}
+
 .portraitsfooter {
     background-image: url('../img/Portraits/Camden.jpg');
-    background-size: cover;
     background-position: 0cm -8cm;
     background-repeat: no-repeat;
 }
-@media (max-width: 1000px) {
-    .portraitsfooter {
-        background-position: 0cm -2cm; /* Centers the image at the top */
-    }
-    .handsfooter {
-        background-position: bottom;
-    }
-}
-/* Adjust background position for smaller screens */
-@media (max-width: 700px) {
-    .portraitsfooter {
-        background-position: 0cm -2cm; /* Centers the image at the top */
-    }
-    .handsfooter {
-        background-position: bottom;
-    }
-}
 
-@media (max-width: 580px) {
-    .containerfooter {
-        height: 40vh;
-        width: 100%;
-        margin-bottom: 0.25%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-content: normal;
-        align-items: normal;
-        justify-content: space-around;
-        overflow: hidden !important;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-    .containerfooter .footertext {
-        font-size: 2.5vw;
-        font-weight: 700;
-    }
-    .containerfooterleft,
-    .containerfooterright {
-        width: 100%; /* Full width for each block */
-        aspect-ratio: 4 / 1; /* Maintain a 4:3 aspect ratio */
-        overflow: hidden; /* Ensure no overflow issues */
-    }
-    .astrofooter,
-    .handsfooter,
-    .portraitsfooter {
-        background-position: 0cm 0cm; /* Centers the image at the top */
-    }
-    .visionsfooter {
-        background-position: 50% 10%; /* Fine-tune for small screens */
-        background-size: cover;
-    }
-}
 .handsfooter {
     background-image: url('../img/View_over_munich-2.JPG');
-    background-size: cover;
     background-position: bottom;
 }
-.visionsfooter{
+
+.visionsfooter {
     background-image: url('../img/foggy1-1.JPG');
-    background-size: cover;
-    background-position: center;
 }
 
-.leftfooter p {
-    transition: 0.75s ease-in-out;
-}
-.rightfooter p {
-    transition: 0.75s ease-in-out;
+/* Hover Effects */
+.leftfooter:hover,
+.rightfooter:hover {
+    transform: scale(1.05);
 }
 
-a.linkcontainerleft {
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-}
+a.linkcontainerleft,
 a.linkcontainerright {
     text-decoration: none;
     width: 100%;
     height: 100%;
 }
 
-div.leftfooter:hover {
-    transform: scale(1.1);
-}
-div.rightfooter:hover {
-    transform: scale(1.1);
-}
-
-div.leftfooter:hover p {
-    transform: scale(0.9);
-}
-div.rightfooter:hover p {
-    transform: scale(0.9);
-}
-
-
+/* Footer Text */
 .footertext {
-    margin: 0%;
+    margin: 0;
     text-align: center;
-    text-decoration: none;
     color: whitesmoke;
-    font-size: 3.5vw;
+    font-size: 3vw;
     font-weight: 500;
     letter-spacing: 0.1em;
 }
+
+@media (max-width: 600px) {
+    .footertext {
+        font-size: 4vw; /* Larger text for smaller screens */
+    }
+    .containerfooter {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: auto; /* Allow rows to adjust height automatically */
+        gap: 1vh; /* Maintain spacing between items */
+        justify-items: center; /* Center items horizontally */
+    }
+}
+
 
 
 
