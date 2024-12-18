@@ -297,130 +297,57 @@ a:hover {
 
 
 
-/* General Footer Styles */
+/* Horizontal Scrolling Footer Styles */
 footer {
     margin-top: 15%;
+    width: 100%;
+    overflow: hidden;
 }
-
 #indexfooter {
     margin-top: 0% !important;
 }
-
 .widefooterlinks {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
-
-.contactfooter {
-    margin: 0% 2.5% 0% 0%;
-}
-
-.contactfooter p {
-    text-align: right;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 0.8em;
-    letter-spacing: 0.1em;
-}
-
-.contactfooter a {
-    text-decoration: none;
-    color: black;
-    transition: 0.25s ease-in-out;
-    text-decoration: underline #00979E;
-}
-
-.contactfooter a:hover {
-    color: #00979E;
-}
-
-.socialfooter {
-    width: 100%;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.5vw;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-}
-
-.socialcontainerfooter {
-    display: flex;
-    flex-direction: column;
-    margin-left: 2.5%;
-}
-
-.coverinstagram2 {
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 0.8em;
-    letter-spacing: 0.1em;
-    color: black;
-    transition: 0.25s ease-in-out;
-    text-decoration: underline #00979E;
-}
-
-.coverinstagram2:hover {
-    color: #00979E;
-}
-
-.continue {
-    text-align: center;
-}
-
-.continue p {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 0.8em;
-    letter-spacing: 0.2em;
-    color: #00979E;
-}
-
-.continue a {
-    color: black;
-    text-decoration: underline #00979E;
-}
-
-.continue a:hover {
-    color: #00979E;
-}
-
-/* Footer Grid Layout */
+/* Scrollable Footer Container */
 .containerfooter {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Default: Two columns */
-    gap: 1vh;
+    display: flex;
     width: 100%;
-    margin-bottom: 1%;
-    overflow: visible;
-    transition: 0.5s ease-in-out;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #00979E rgba(0,151,158,0.3);
+    padding-bottom: 1rem;
+    gap: 1rem;
 }
-
-@media (max-width: 900px) {
-    .containerfooter {
-        grid-template-columns: 1fr; /* Single column */
-        grid-template-rows: auto; /* Rows auto-adjust */
-        justify-items: center; /* Center items horizontally */
-    }
+/* Scrollbar Styling */
+.containerfooter::-webkit-scrollbar {
+    height: 12px; /* Increased from 8px to make scrollbar larger */
 }
-
-/* Footer Block Styles */
+.containerfooter::-webkit-scrollbar-track {
+    background: rgba(0,151,158,0.1);
+    border-radius: 10px;
+}
+.containerfooter::-webkit-scrollbar-thumb {
+    background-color: #00979E;
+    border-radius: 10px;
+}
+/* Footer Item Styling */
 .containerfooterleft,
 .containerfooterright {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    min-height: 20vh;
-    overflow: visible;
+    flex: 0 0 calc(40% - 0.5rem); /* Reduced from 50% to make items smaller on full screen */
+    min-width: calc(40% - 0.5rem);
+    max-width: calc(40% - 0.5rem);
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1.8 / 1;
+    position: relative; /* Added to help with absolute positioning */
 }
-
 .leftfooter,
 .rightfooter {
     display: flex;
@@ -430,43 +357,21 @@ footer {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative; /* Added to ensure proper layering */
 }
-
-/* Background Images */
-.astrofooter {
-    background-image: url('../img/Astrophotography/Trifid.jpg');
-}
-
-.portraitsfooter {
-    background-image: url('../img/Portraits/Camden.jpg');
-    background-position: 0cm -8cm;
-    background-repeat: no-repeat;
-}
-
-.handsfooter {
-    background-image: url('../img/View_over_munich-2.JPG');
-    background-position: bottom;
-}
-
-.visionsfooter {
-    background-image: url('../img/foggy1-1.JPG');
-}
-
-/* Hover Effects */
 .leftfooter:hover,
 .rightfooter:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
-
 a.linkcontainerleft,
 a.linkcontainerright {
     text-decoration: none;
+    display: block;
     width: 100%;
     height: 100%;
 }
-
-/* Footer Text */
 .footertext {
     margin: 0;
     text-align: center;
@@ -474,19 +379,68 @@ a.linkcontainerright {
     font-size: 3vw;
     font-weight: 500;
     letter-spacing: 0.1em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 1rem;
+    position: absolute;
+    top: 50%; /* Centered vertically */
+    left: 50%; /* Centered horizontally */
+    transform: translate(-50%, -50%); /* Ensures perfect centering */
+    width: 100%;
+    z-index: 1; /* Ensure text is above the background */
+}
+/* Background Images */
+.astrofooter {
+    background-image: url('../img/Astrophotography/Trifid.jpg');
+}
+.portraitsfooter {
+    background-image: url('../img/Portraits/Camden.jpg');
+    background-position: 0cm -8cm;
+    background-repeat: no-repeat;
+}
+.handsfooter {
+    background-image: url('../img/View_over_munich-2.JPG');
+    background-position: bottom;
+}
+.visionsfooter {
+    background-image: url('../img/foggy1-1.JPG');
+}
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .containerfooterleft,
+    .containerfooterright {
+        flex: 0 0 calc(80% - 0.5rem);
+        min-width: calc(80% - 0.5rem);
+        max-width: calc(80% - 0.5rem);
+    }
+    .footertext {
+        font-size: 4vw;
+    }
+    .portraitsfooter {
+        background-position: 0cm -2cm;
+    }
+}
+@media (max-width: 600px) {
+    .containerfooterleft,
+    .containerfooterright {
+        flex: 0 0 calc(90% - 0.5rem);
+        min-width: calc(90% - 0.5rem);
+        max-width: calc(90% - 0.5rem);
+    }
+    .footertext {
+        font-size: 5vw;
+    }
+    .portraitsfooter {
+        background-position: 0cm -2cm;
+    }
+}
+/* Copyright Positioning */
+.copyright {
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 1rem;
 }
 
-@media (max-width: 600px) {
-    .footertext {
-        font-size: 4vw; /* Larger text for smaller screens */
-    }
-    .containerfooter {
-        grid-template-columns: 1fr; /* Single column layout */
-        grid-template-rows: auto; /* Allow rows to adjust height automatically */
-        gap: 1vh; /* Maintain spacing between items */
-        justify-items: center; /* Center items horizontally */
-    }
-}
 
 
 
@@ -1564,8 +1518,8 @@ div.leftfooterab:hover p {
         letter-spacing: 0.1vw;
         font-size: 0.6em;a
     }
-    .continue p{
-        font-size: 0.6em;
+    .continue {
+        font-size: 1em;
         font-weight: 500;
     }
     .footerbar {
