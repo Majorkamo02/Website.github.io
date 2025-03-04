@@ -2184,9 +2184,9 @@ div.leftfooterab:hover p {
     }
   }
 
-/* Main Gallery Styles */
+/* Base Gallery (Desktop View) */
 .gallery {
-    column-count: 4; /* Creates 4 columns */
+    column-count: 4; /* 4 columns on large screens */
     column-gap: 12px; /* Space between columns */
     padding: 0 10%;
     margin-bottom: 50px;
@@ -2195,75 +2195,76 @@ div.leftfooterab:hover p {
 /* Images inside the gallery */
 .gallery-img {
     width: 100%;
-    margin-bottom: 15px; /* Space between rows */
+    margin-bottom: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     display: block;
     break-inside: avoid; /* Prevents items from breaking across columns */
 }
 
-/* Hover effect for images */
-.gallery-img:hover {
-    transform: scale(1.03);
-    transition: transform 0.2s ease;
-    z-index: 10;
+/* Hover effect (only on desktop) */
+@media (min-width: 901px) {
+    .gallery-img:hover {
+        transform: scale(1.03);
+        transition: transform 0.2s ease;
+        z-index: 10;
+    }
 }
 
-/* Responsive Adjustments */
+/* Medium screens (tablets, small desktops) */
 @media (max-width: 900px) {
     .gallery {
-        column-count: 2; /* Switch to 2 columns on smaller screens */
+        column-count: 2; /* 2 columns for tablets */
+        padding: 0 5%; /* Reduce padding */
+    }
+    .gallery-img {
+        margin-bottom: 12px; /* Tighter spacing */
     }
 }
 
+/* Small screens (phones) */
 @media (max-width: 600px) {
     .gallery {
-        column-count: 1; /* Single column for very small screens */
+        column-count: 1; /* 1 column for small devices */
+        padding: 0 3%; /* Even smaller padding */
+    }
+    .gallery-img {
+        margin-bottom: 10px; /* Reduce space between images */
     }
 }
 
-.gallery-img:hover {
-    transform: scale(1.01);
-    z-index: 100; /* Higher z-index when hovered */
+/* Extra small screens (very narrow devices) */
+@media (max-width: 400px) {
+    .gallery {
+        padding: 0; /* Remove padding for the tightest fit */
+    }
+    .gallery-img {
+        margin-bottom: 8px; /* Minimal gap */
+    }
 }
 
-/* Lightbox Styles */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Dark translucent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
 }
 
-.lightbox.hidden {
-    visibility: hidden;
-    opacity: 0;
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 20px;
 }
 
-.lightbox-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Ensure full image is visible */
-    margin: auto; /* Center image perfectly */
-}
+.left-arrow { left: 30px; }
+.right-arrow { right: 30px; }
 
 /* Close Button */
 .close-btn {
@@ -2304,18 +2305,6 @@ div.leftfooterab:hover p {
 
 .nav-arrow:hover {
     transform: translateY(-50%) scale(1.2);
-}
-
-/* Lightbox Clickable Area */
-.lightbox {
-    cursor: pointer;
-}
-
-/* Prevent unintended scaling or clipping of content */
-.lightbox img,
-.lightbox .nav-arrow,
-.lightbox .close-btn {
-    pointer-events: auto; /* Allow interaction with buttons and arrows */
 }
 
 /* For responsiveness on smaller screens */
@@ -2656,33 +2645,64 @@ div.leftfooterab:hover p {
 .see-all-pricing:hover {
     background: #007a80;
 }
-
-/* Adjust gallery spacing */
-.gallery {
-    column-count: 4;
-    column-gap: 10px; /* Reduced gap */
-    padding: 0 5%; /* Reduced padding */
-    margin-bottom: 30px; /* Reduced margin */
-}
-
-/* Lightbox adjustments */
 .lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .lightbox.hidden {
+    display: none;
+  }
+  
+  .lightbox-content {
+    position: relative; /* Ensure positioning context */
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    max-width: 90%;
+    max-height: 90%;
 }
+  
+#lightbox-img {
+    max-width: 95vw; /* Use up to 95% of the viewport width */
+    max-height: 95vh; /* Use up to 95% of the viewport height */
+    object-fit: contain; /* Ensure image fits without distortion */
+}
+  
+  .close-btn {
+    position: fixed;
+    top: 0px;
+    right: 40px;
+    color: white;
+    font-size: 0px;
+    cursor: pointer;
+  }
+  
+  .nav-arrow {
+    position: fixed; /* Change from absolute to fixed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure arrows are above the image */
+}
+  
+  .left-arrow {
+    left: 5px; /* Adjust this value to control distance from the left edge */
+  }
+  
+  .right-arrow {
+    right: 10px; /* Adjust this value to control distance from the right edge */
+  }
 
-.lightbox.active {
-    visibility: visible;
-    opacity: 1;
-}

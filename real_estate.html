@@ -122,15 +122,16 @@
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="close-btn" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" src="" alt="Enlarged Image">
-            <div class="nav-arrow left-arrow" onclick="changeImage(-1)">&#10094;</div>
-            <div class="nav-arrow right-arrow" onclick="changeImage(1)">&#10095;</div>
-        </div>
-    </div>
+
+            <!-- Lightbox (hidden by default) -->
+            <div id="lightbox" class="lightbox hidden">
+                <div class="lightbox-content">
+                    <span class="close-btn" id="close-btn">&times;</span>
+                    <img id="lightbox-img" src="" alt="Enlarged Image">
+                    <div class="nav-arrow left-arrow" id="left-arrow">&#10094;</div>
+                    <div class="nav-arrow right-arrow" id="right-arrow">&#10095;</div>
+                </div>
+            </div>
 
     <footer id="indexfooter">
         <!-- Keep your existing footer content here -->
