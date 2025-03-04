@@ -2706,3 +2706,39 @@ div.leftfooterab:hover p {
     right: 10px; /* Adjust this value to control distance from the right edge */
   }
 
+/* Footer Styling */
+.simple-footer {
+    background: #111; /* Dark background */
+    color: #fff; /* Light text for contrast */
+    padding: 20px 10px;
+    text-align: center; /* Center-align content */
+    font-family: 'Montserrat', sans-serif; /* Match your font */
+}
+
+/* Footer Links */
+.footer-link {
+    color: #fff;
+    text-decoration: none; /* No underlines */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #aaa; /* Light gray hover effect */
+}
+
+/* Copyright */
+.footer-copyright {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.7; /* Slight transparency */
+}
+
+/* Responsive Adjustment */
+@media (max-width: 600px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Space between stacked items */
+    }
+}
