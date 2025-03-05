@@ -277,8 +277,8 @@ a:hover {
 }
 
 .title_lines {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 3%;
+    margin-bottom: 5%;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -297,7 +297,7 @@ a:hover {
     width: 30%;
     height: 1px;
     content: '\a0';
-    background-color: #00979E;
+    background-color: #000000;
     margin-left: 20%;
 }
 .title_lines:before {
@@ -2560,7 +2560,7 @@ div.leftfooterab:hover p {
 
 .price {
     font-size: 2rem;
-    color: #00979E;
+    color: #222222;
     margin: 1rem 0;
     font-weight: 600;
 }
@@ -2581,13 +2581,13 @@ div.leftfooterab:hover p {
 
 .package-features li:before {
     content: "•";
-    color: #00979E;
+    color: #868686;
     position: absolute;
     left: 0;
 }
 
 .select-package {
-    background: #00979E;
+    background: #222222;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -2606,7 +2606,7 @@ div.leftfooterab:hover p {
 }
 
 .select-package:hover {
-    background: #007a80;
+    background: #222222;
 }
 /* Adjust spacing for the packages section */
 .package-grid {
@@ -2619,7 +2619,7 @@ div.leftfooterab:hover p {
 
 .package-option {
     padding: 1.5rem; /* Reduced padding */
-    border: 1px solid rgba(0,151,158,0.1);
+    border: 1px solid #868686;
     border-radius: 8px;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -2631,7 +2631,7 @@ div.leftfooterab:hover p {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
-    background: #00979E;
+    background: #222222;
     color: white;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -2643,7 +2643,7 @@ div.leftfooterab:hover p {
 }
 
 .see-all-pricing:hover {
-    background: #007a80;
+    background: #868686;
 }
 .lightbox {
     position: fixed;
